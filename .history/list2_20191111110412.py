@@ -18,30 +18,17 @@
 
 
 def remove_adjacent(nums):
-    result = []
-    for num in nums:
-        if len(result) == 0 or num != result[-1]:
-            result.append(num)
-    return result
+    """Your code goes here.  Edit this docstring."""
+    return
 
 
 # E. Given two lists sorted in increasing order, create and return a merged
 # list of all the elements in sorted order. You may modify the passed in lists.
 # The solution should work in "linear" time, making a single pass of both lists.
 # Hint: Don't use `sort` or `sorted` -- they are not linear time.
-# def linear_merge(list1, list2):
-#     list3 = list1+list2
-#     return list3
 def linear_merge(list1, list2):
-    result = []
-    while len(list1) and len(list2):
-        if list1[0] < list2[0]:
-            result.append(list1.pop(0))
-        else:
-            result.append(list2.pop(0))
-    result.extend(list1)
-    result.extend(list2)
-    return result
+    """Your code goes here.  Edit this docstring."""
+    return
 
 
 # Simple provided test() function used in main() to print
@@ -60,7 +47,7 @@ def main():
     test(remove_adjacent([1, 2, 2, 3]), [1, 2, 3])
     test(remove_adjacent([2, 2, 3, 3, 3]), [2, 3])
     test(remove_adjacent([]), [])
-    test(remove_adjacent([2, 2, 3, 3, 3, 4, 5, 2, 3]), [2, 3, 4, 5])
+    test(remove_adjacent([2, 2, 3, 3, 3, 4, 5, 2, 3]), [2, 3, 4, 5, 2, 3])
 
     print('linear_merge')
     test(linear_merge(['aa', 'xx', 'zz'], ['bb', 'cc']),
