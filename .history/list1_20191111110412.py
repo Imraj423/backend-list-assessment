@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 # Copyright 2010 Google Inc.
@@ -25,11 +25,8 @@
 
 
 def match_ends(words):
-    count = 0
-    for word in words:
-        if len(word) >= 2 and word[0] == word[-1]:
-            count = count + 1
-    return count
+    """Your code goes here.  Edit this docstring."""
+    return
 
 
 # B. front_x
@@ -40,18 +37,9 @@ def match_ends(words):
 # Hint: this can be done by making 2 lists and sorting each of them
 # before combining them.
 def front_x(words):
-    list_a = []
-    list_b = []
-    for word in words:
-        if word.startswith('x'):
-            list_a.append(word)
-        else:
-            list_b.append(word)
-    return sorted(list_a) + sorted(list_b)
+    """Your code goes here.  Edit this docstring."""
+    return
 
-
-def last(a):
-    return a[-1]
 
 # C. sort_last
 # Given a list of non-empty tuples, return a list sorted in increasing
@@ -59,10 +47,9 @@ def last(a):
 # e.g. [(1, 7), (1, 3), (3, 4, 5), (2, 2)] yields
 # [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
 # Hint: use a custom key= function to extract the last element form each tuple.
-
-
 def sort_last(tuples):
-    return sorted(tuples, key=last)
+    """Your code goes here.  Edit this docstring."""
+    return
 
 
 # Simple provided test() function used in main() to print
@@ -72,7 +59,7 @@ def test(got, expected):
         prefix = ' OK '
     else:
         prefix = '  X '
-    print '%s got: %s expected: %s' % (prefix, repr(got), repr(expected))
+    print('{} got: {} expected: {}'.format(prefix, repr(got), repr(expected)))
 
 
 # Calls the above functions with interesting inputs.
@@ -82,7 +69,6 @@ def main():
     test(match_ends(['', 'x', 'xy', 'xyx', 'xx']), 2)
     test(match_ends(['aaa', 'be', 'abc', 'hello']), 1)
 
-    print
     print('front_x')
     test(front_x(['bbb', 'ccc', 'axx', 'xzz', 'xaa']),
          ['xaa', 'xzz', 'axx', 'bbb', 'ccc'])
@@ -91,15 +77,15 @@ def main():
     test(front_x(['mix', 'xyz', 'apple', 'xanadu', 'aardvark']),
          ['xanadu', 'xyz', 'aardvark', 'apple', 'mix'])
 
-    print
     print('sort_last')
     test(sort_last([(1, 3), (3, 2), (2, 1)]),
          [(2, 1), (3, 2), (1, 3)])
     test(sort_last([(2, 3), (1, 2), (3, 1)]),
          [(3, 1), (1, 2), (2, 3)])
-    test(sort_last([(1, 7), (1, 3), (3, 4, 5), (2, 2)]),
-         [(2, 2), (1, 3), (3, 4, 5), (1, 7)])
+    test(sort_last([(1, 7), (1, 3), (3, 9, 4), (2, 2)]),
+         [(2, 2), (1, 3), (3, 9, 4), (1, 7)])
 
 
+# Standard boilerplate (python idiom) to call the main() function.
 if __name__ == '__main__':
-  main()
+    main()
